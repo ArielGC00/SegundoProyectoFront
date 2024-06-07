@@ -56,7 +56,7 @@ async function loadFaceDetectionModel() {
 
 async function obtenerNombreUsuario() {
     try {
-        const response = await axios.get('http://localhost:8080/ProyectoIIDiseno/SvUsuario');
+        const response = await axios.get('http://inteligenciasarielcelesteluis.us-east-2.elasticbeanstalk.com//SvUsuario');
         console.log("Respuesta del servidor:", response.data); // Verificar la respuesta del servidor
         if (response.status === 200) {
             const nombre = response.data.nombre;
@@ -138,12 +138,12 @@ async function compareWithStoredImages(capturedDescriptor, base64Image) {
 
 async function sendResponseToBackEnd(response) {
     try {
-        const res = await axios.post('http://localhost:8080/ProyectoIIDiseno/SvFacialRecognition', response);
+        const res = await axios.post('http://inteligenciasarielcelesteluis.us-east-2.elasticbeanstalk.com/SvFacialRecognition', response);
         if (res.status === 200) {
             
             const data = res.data;
             const redirectUrl = data.redirectUrl;
-            window.location.href = `http://localhost:8080/ProyectoIIDiseno/${redirectUrl}`;
+            window.location.href = `http://inteligenciasarielcelesteluis.us-east-2.elasticbeanstalk.com/ProyectoIIDiseno/${redirectUrl}`;
         }
     } catch (error) {
         console.error('Error during authentication:', error);
