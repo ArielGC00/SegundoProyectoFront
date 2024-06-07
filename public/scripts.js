@@ -143,7 +143,7 @@ async function sendResponseToBackEnd(response) {
             
             const data = res.data;
             const redirectUrl = data.redirectUrl;
-            window.location.href = `http://inteligenciasarielcelesteluis.us-east-2.elasticbeanstalk.com/ProyectoIIDiseno/${redirectUrl}`;
+            window.location.href = `http://inteligenciasarielcelesteluis.us-east-2.elasticbeanstalk.com/${redirectUrl}`;
         }
     } catch (error) {
         console.error('Error during authentication:', error);
